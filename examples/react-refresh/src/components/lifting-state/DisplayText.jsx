@@ -1,6 +1,6 @@
 
 
-/**
+/** https://jsdoc.app/tags-param.html
  * @param {{text:string}} props
  */
 

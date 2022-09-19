@@ -11,6 +11,7 @@ const Input = (props) => {
   );
 };
 
+// https://www.npmjs.com/package/prop-types
 Input.propTypes = {
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired
