@@ -18,3 +18,19 @@ function districtResults(districtName) {
 
   return result.join("\n");
 }
+
+function partyResults(party) {
+  const districtResults = valData.valkretsar.map((vk) => {
+    const partyResults = vk.rosterPaverkaMandat.partiroster.find(
+      (pr) => pr.partiforkortning === party
+    );
+
+    return `${vk.namn}: ${partyResults.antalRoster} (${partyResults.andelRoster})`;
+  });
+
+  districtResults.unshift(`Resultat för ${party} per valkrets`);
+
+  return districtResults.join("\n");
+}
+
+console.log(partyResults("MP"));
