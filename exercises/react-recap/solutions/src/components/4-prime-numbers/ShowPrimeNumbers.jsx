@@ -4,20 +4,18 @@ function ShowPrimeNumbers({ limit }) {
   const [primeNumbers, setPrimeNumbers] = useState([]);
 
   useEffect(() => {
+    const newPrimeNumbers = [];
 
-  }, [limit]);
-
-  const newPrimeNumbers = [];
-
-  for (let n = 2; n <= limit; n++) {
-    let isNPrime = true;
-    for (let index = 0; index < newPrimeNumbers.length && isNPrime; index++) {
-      if (n % newPrimeNumbers[index] === 0) isNPrime = false;
+    for (let n = 2; n <= limit; n++) {
+      let isNPrime = true;
+      for (let index = 0; index < newPrimeNumbers.length && isNPrime; index++) {
+        if (n % newPrimeNumbers[index] === 0) isNPrime = false;
+      }
+      if (isNPrime) newPrimeNumbers.push(n);
     }
-    if (isNPrime) newPrimeNumbers.push(n);
-  }
 
-  setPrimeNumbers(newPrimeNumbers);
+    setPrimeNumbers(newPrimeNumbers);
+  }, [limit]);
 
   return (
     <div>
