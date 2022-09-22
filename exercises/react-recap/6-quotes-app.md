@@ -11,7 +11,15 @@ import { useState } from "react";
 
 function App() {
   const quotes = [
-
+    "An organization that treats its programmers as morons will soon have programmers that are willing and able to act like morons only.",
+    "Design and programming are human activities; forget that and all is lost.",
+    "Before software can be reusable it first has to be usable.",
+    "Premature optimization is the root of all evil in programming.",
+    "You cannot teach beginners top-down programming, because they don't know which end is up.",
+    "Optimism is an occupational hazard of programming: feedback is the treatment.",
+    "Simple things should be simple, complex things should be possible.",
+    "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+    "Always code as if the person who ends up maintaining your code will be a violent psychopath who knows where you live."
   ]
 
   return (
