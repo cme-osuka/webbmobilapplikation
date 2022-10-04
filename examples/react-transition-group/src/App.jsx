@@ -8,15 +8,13 @@ function App() {
 
   return (
     <div className="App">
-      <CSSTransition
-        classNames="text"
-        timeout={500}
-        unmountOnExit
-        in={show}
-        >
-        <p>En text</p>
+      <CSSTransition classNames="dialog" timeout={500} unmountOnExit in={show}>
+        <div className="dialog">
+          <p>Min dialogruta</p>
+          <button onClick={() => setShow(false)}>Stäng rutan</button>
+        </div>
       </CSSTransition>
-      <button onClick={() => setShow(!show)}>Toggla om texten visas</button>
+      <button onClick={() => setShow(true)}>Visa dialog</button>
     </div>
   );
 }

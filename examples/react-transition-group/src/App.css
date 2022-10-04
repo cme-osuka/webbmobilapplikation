@@ -40,18 +40,33 @@
   color: #888;
 }
 
+.dialog {
+  border: 3px solid black;
+  position: absolute;
+  left: 25vw;
+  top: 25vh;
+  background: gray;
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+}
+
+.dialog p {
+  flex: 1;
+}
+
 /* För react-transition-group */
-.text-enter {
+.dialog-enter {
   opacity: 0;
 }
-.text-enter-active {
+.dialog-enter-active {
   opacity: 1;
   transition: opacity 500ms;
 }
-.text-exit {
+.dialog-exit {
   opacity: 1;
 }
-.text-exit-active {
+.dialog-exit-active {
   opacity: 0;
   transition: opacity 500ms;
 }
