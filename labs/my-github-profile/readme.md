@@ -13,6 +13,7 @@ Fokus:
 - Styla gärna! Välj ett sätt du inte är så bekant med, t.ex. Styled components och testa jobba med det!
 - Försök att separera logik och rendering enligt Container / Presentational-patternet. (Eller skapa en hook för logik/hämta data)
 - Testa hämta informationen och lagra den i React Context!
+- Testa att bygga den för mobilen först, dvs. att du använder det Responsiva läget i webbläsaren. Och sedan justera stiler, media-queries för desktop efter det.
 
 Bonus:
 - Finns det något sätt att animera in element? Kan man animera sido-transitions med React Router? Testa!
@@ -26,6 +27,8 @@ Exempel:
 1. Skapa en personlig access token (För lista på saker du behöver checka i, kolla nedan) [Github: PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 2. Spara din Token (Viktigt: Använd en ENV-variabel för detta och pusha **inte den till Github**
 3. Börja göra requests med Fetch, eller Axios t.ex. (se exemplet nedan)
+
+Du hittar mer info om deras REST API (repositories, users) på https://docs.github.com/en/rest
 
 ```
 # Saker du behöver checka i för din Personal access token
