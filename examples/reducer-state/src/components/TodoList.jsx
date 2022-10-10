@@ -1,19 +1,23 @@
 import React, { useState } from "react";
+import { useTodosContext } from "../context/TodosContext";
 
-function TodoList({ todos, onChangeTodo, onDeleteTodo }) {
+function TodoList() {
+  const { todos } = useTodosContext();
   return (
     <ul>
       {todos.map((todo) => (
         <li key={todo.id}>
-          <Todo todo={todo} onChange={onChangeTodo} onDelete={onDeleteTodo} />
+          <Todo todo={todo} />
         </li>
       ))}
     </ul>
   );
 }
 
-function Todo({ todo, onChange, onDelete }) {
+function Todo({ todo }) {
   const [isEditing, setIsEditing] = useState(false);
+  const { dispatch } = useTodosContext();
+
   let todoContent;
   if (isEditing) {
     todoContent = (
@@ -21,9 +25,12 @@ function Todo({ todo, onChange, onDelete }) {
         <input
           value={todo.text}
           onChange={(e) => {
-            onChange({
-              ...todo,
-              text: e.target.value,
+            dispatch({
+              type: "edited",
+              todo: {
+                ...todo,
+                text: e.target.value,
+              },
             });
           }}
         />
@@ -44,14 +51,26 @@ function Todo({ todo, onChange, onDelete }) {
         type="checkbox"
         checked={todo.done}
         onChange={(e) => {
-          onChange({
-            ...todo,
-            done: e.target.checked,
+          dispatch({
+            type: "edited",
+            todo: {
+              ...todo,
+              done: e.target.checked,
+            },
           });
         }}
       />
       {todoContent}
-      <button onClick={() => onDelete(todo.id)}>Delete</button>
+      <button
+        onClick={() =>
+          dispatch({
+            type: "deleted",
+            id: todo.id,
+          })
+        }
+      >
+        Delete
+      </button>
     </label>
   );
 }

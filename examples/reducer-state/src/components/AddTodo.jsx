@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useTodosContext } from "../context/TodosContext";
 
-function AddTodo({ onAddTodo }) {
+let nextId = 3;
+
+function AddTodo() {
   const [text, setText] = useState("");
+  const { dispatch } = useTodosContext();
+
   return (
     <div>
       <input
@@ -11,7 +16,11 @@ function AddTodo({ onAddTodo }) {
       />
       <button
         onClick={() => {
-          onAddTodo(text);
+          dispatch({
+            type: "added",
+            text: text,
+            id: nextId++,
+          });
           setText("");
         }}
       >
