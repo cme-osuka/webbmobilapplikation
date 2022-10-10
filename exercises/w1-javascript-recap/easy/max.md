@@ -1,6 +1,6 @@
 # Odd array
 
-Skriv en funktion `oddArray` som tar en array som argument. Funktionen ska returnera en ny array innehållande alla udda element i den givna arrayen.
+Skriv en funktion `oddArray` som tar en array som argument. Funktionen ska returnera en ny array innehållande alla udda element (räknat efter 1, inte 0) i den givna arrayen. 
 
 **Exempel**
 ```
