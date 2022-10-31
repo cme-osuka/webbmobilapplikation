@@ -1,5 +1,3 @@
-# 1 Vem gör vad, samla styrkor, dela upp ansvar (+ standups?)
-
 # Gruppprojekt: Kodnamn FEUFLIX
 Ni kommer att bygga en app ungefär som [DEN HÄR](https://react-movie-database-18.netlify.app/), med hjälp av [The Movie Db API](https://developers.themoviedb.org/3/getting-started/introduction). Där man skulle kunna t.ex. se en lista på populära filmer, söka efter filmer och få upp information om dessa. De stödjer även TV-shows  Men det är naturligtvis inte begränsat till just detta - och ni kommer få ett par förslag på hur ni kan bygga en liknande applikation *fast bättre!*.
 
