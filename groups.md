@@ -7,7 +7,7 @@ Grupp 1 (På skolan):
 - Saga
 
 Grupp 2 (På skolan):
-- Linda L
+- Linda
 - Katerina
 - Sandy
 - Marcus
