@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cats",
+  "info": {
+    "singularName": "cat",
+    "pluralName": "cats",
+    "displayName": "Cat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "devils_spawn": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
