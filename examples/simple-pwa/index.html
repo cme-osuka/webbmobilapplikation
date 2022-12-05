@@ -11,7 +11,6 @@
     <!-- Meta-taggar som krävs för
       en Progressiv Web App -->
     <meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
-    <meta name="theme-color" content="black" />
 
     <!-- Manifest-fil -->
     <link rel="manifest" href="manifest.json" />
@@ -21,8 +20,38 @@
     <h1 style="color: purple">Min första PWA</h1>
 
     <p>Detta är en väldigt enkel PWA</p>
+    
+    <button id="todoButton">Get Todos</button>
 
     <script>
+      fetch("/important.json")
+        .then(res => res.json())
+        .then(data => console.log(data))
+    </script>
+
+    <script>
+      const todoButton = document.querySelector("#todoButton");
+      todoButton.addEventListener("click", () => {
+        fetch("https://jsonplaceholder.typicode.com/todos")
+        .then(res => res.json())
+        .then(data => console.log(data))
+      })
+      
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          registerServiceWorker();
+        }
+      });
+
+      async function registerServiceWorker() {
+        if ('serviceWorker' in navigator) {
+          try {
+            await navigator.serviceWorker.register('/serviceworker.js');
+          } catch (e) {
+            alert('ServiceWorker registration failed. Sorry about that.');
+          }
+        }
+      }
     </script>
   </body>
 </html>

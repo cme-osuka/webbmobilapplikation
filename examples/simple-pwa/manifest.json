@@ -3,6 +3,8 @@
   "short_name": "PWA",
   "start_url": "index.html",
   "display": "standalone",
+  "theme_color": "#967102",
+  "background_color": "#ffd700",
   "scope": ".",
   "description": "Detta är en PWA",
   "icons": [
