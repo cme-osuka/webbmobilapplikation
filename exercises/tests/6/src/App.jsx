@@ -1,19 +1,50 @@
-import { useState } from "react";
-import Success from "./pages/Success";
-import { Route, Routes } from "react-router-dom";
-import Signup from "./pages/Signup";
+import { createBrowserRouter, Outlet, RouterProvider, useNavigation } from "react-router-dom";
+import "./App.css";
+
 import Home from "./pages/Home";
+import Repositories from "./pages/Repositories";
+import Profile from "./pages/Profile";
+
+import { fetchMyRepositories, fetchMyLatestRepositories, fetchUserData } from "./api";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    loader: fetchUserData,
+    element: <Root />,
+    id: "root",
+    children: [
+      {
+        path: "/",
+        loader: fetchMyLatestRepositories,
+        element: <Home />,
+      },
+      {
+        path: "/repos",
+        loader: fetchMyRepositories,
+        element: <Repositories />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+    ],
+  },
+]);
+
+function Root() {
+  const navigation = useNavigation();
+
+  return (
+    <>
+      <h1>State: {navigation.state}</h1>
+      <Outlet />
+    </>
+  );
+}
 
 function App() {
-  return (
-    <div className="antialiased bg-body text-body font-body">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/success" element={<Success />} />
-      </Routes>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
