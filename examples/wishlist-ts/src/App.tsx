@@ -1,26 +1,33 @@
-import { useState } from 'react'
-import { useWishes } from './contexts/WishContext';
-import './App.css'
-
+import React, { useState } from "react";
+import { useWishes } from "./contexts/WishContext";
+import "./App.css";
 
 function App() {
-  const [inputText, setInputText] = useState("")
+  const [inputText, setInputText] = useState("");
   const { wishes, addWish } = useWishes();
 
   const handleClick = () => {
-    addWish({ text: inputText })
+    addWish({ text: inputText });
     setInputText("");
-  }
+  };
 
   return (
     <div className="App">
+      <h1>Wishlist</h1>
       <ul>
-        { wishes.map(wish => <li>{wish.text}</li>) }
+        {wishes.map((wish) => (
+          <li>{wish.text}</li>
+        ))}
       </ul>
-      <input name="wish" value={inputText} onChange={({target}) => setInputText(target.value)} />
+      <input
+        name="wish"
+        value={inputText}
+        placeholder="Lägg till önskning"
+        onChange={({ target }) => setInputText(target.value)}
+      />
       <button onClick={handleClick}>Lägg till önskning</button>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

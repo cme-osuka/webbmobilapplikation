@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+
+import React, { createContext, useContext, useState } from "react";
 
 interface Wish {
   text: string;
