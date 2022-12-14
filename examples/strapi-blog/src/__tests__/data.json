@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "title": "En mockad titel",
+        "content": "## Vad gör vi idag\nIdag jobbar vi med Strapi. Det är ett Headless CMS och jag slipper skriva backend.\n\n### Underrubrik\n**Det funkar ju**\n\nGodkväll!",
+        "createdAt": "2022-11-30T12:25:10.087Z",
+        "updatedAt": "2022-11-30T12:54:18.995Z",
+        "publishedAt": "2022-11-30T12:25:25.145Z",
+        "users_permissions_user": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "username": "oscar",
+              "email": "mock@test.com",
+              "provider": "local",
+              "confirmed": true,
+              "blocked": false,
+              "createdAt": "2022-11-30T09:57:26.916Z",
+              "updatedAt": "2022-11-30T09:57:26.916Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "title": "Min andra bloggpost",
+        "content": "Här går det undan. Superblogger!",
+        "createdAt": "2022-11-30T12:55:28.773Z",
+        "updatedAt": "2022-11-30T12:55:29.563Z",
+        "publishedAt": "2022-11-30T12:55:29.562Z",
+        "users_permissions_user": {
+          "data": {
+            "id": 1,
+            "attributes": {
+              "username": "oscar",
+              "email": "oscar@osuka.dev",
+              "provider": "local",
+              "confirmed": true,
+              "blocked": false,
+              "createdAt": "2022-11-30T09:57:26.916Z",
+              "updatedAt": "2022-11-30T09:57:26.916Z"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 2
+    }
+  }
+}
