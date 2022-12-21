@@ -2,7 +2,7 @@ import React from "react";
 
 
 const Item = (props) => {
-  return <p data-testid="two-item">{text}</p>
+  return <p data-testid="two-item">{props.text}</p>
 }
 
 
@@ -11,11 +11,11 @@ const Item = (props) => {
 // Använd komponenten Item för att skriva ut det
 // i items.map nedan.
 
-const Two = () => {
+const Two = ({ items }) => {
   return (
     <div>
       {
-        items.map()
+        items.map(item => <Item text={item} />)
       }
     </div>
   );

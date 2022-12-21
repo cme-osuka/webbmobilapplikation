@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 // Lös den oändliga loopen!
@@ -11,7 +11,7 @@ function Five() {
 
   useEffect(() => {
     setCount(count => count + 1)
-  }, [count])
+  }, [])
 
   return (
     <div data-testid="five-count">{count}</div>

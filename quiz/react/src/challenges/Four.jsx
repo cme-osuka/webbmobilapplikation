@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import fetch from "node-fetch";
 // Den här komponenten har ett par stycken problem och
 // saknar några delar. Mer exakt: 4 stycken.
 // Det är din uppgift att identifiera och lösa dessa.
@@ -8,20 +8,30 @@ import React from 'react'
 // från dummyjson-apiet och skriva ut dennes namn.
 
 const Four = () => {
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null)
 
   const getData = async (url) => {
     const response = await fetch(url)
-    const data = response.json();
+    const data = await response.json();
+    return data;
   }
 
   async function getUser() {
-    const user = getData("https://dummyjson.com/users/1")
+    const user = await getData("https://dummyjson.com/users/1")
+    setLoading(false);
     setUser(user);
   }
 
+  useEffect(() => {
+    getUser()
+  }, [])
 
   // Rör inte koden under denna kommentaren
+  if (loading) {
+    return <div data-testid="four-loading">Loading...</div>
+  }
+  
   if (!user) {
     return <div data-testid="four-name">No user found</div>
   }

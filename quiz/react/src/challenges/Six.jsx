@@ -12,15 +12,16 @@ function Six() {
   const [input, setInput] = useState({})
 
   function handleInput(e) {
+    const { name: inputName, value } = e.target;
     // Rör inte funktionen nedan
     setInput(input => ({ ...input, [inputName]: value}))
   }
 
   return (
     <div>
-      <p data-testid="six-text">Hi, my name is: {input} {input}</p>
-      <input type="text" name="firstName" data-testid="six-firstName" />
-      <input type="text" name="lastName" data-testid="six-lastName" />
+      <p data-testid="six-text">Hi, my name is: {input.firstName} {input.lastName}</p>
+      <input onChange={handleInput} type="text" name="firstName" data-testid="six-firstName" />
+      <input onChange={handleInput} type="text" name="lastName" data-testid="six-lastName" />
     </div>
   )
 }
