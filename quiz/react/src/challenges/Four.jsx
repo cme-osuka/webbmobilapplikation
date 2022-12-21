@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Den här komponenten har ett par stycken problem och
-// saknar några delar. Mer exakt: 4 stycken.
+// saknar några delar. Mer exakt: 5 stycken.
 // Det är din uppgift att identifiera och lösa dessa.
 // 
 // Men komponentens syfte är att hämta en användare
